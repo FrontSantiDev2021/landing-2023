@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
     },
     responsive:[
       {
-        breakpoint: 400,
+        breakpoint: 300,
         settings: {
           slidesToShow: 1,
           scrollLock: false,
@@ -125,16 +125,20 @@ function scrollFunction() {
 function mostrarContenedorGrid() {
    const screenWidth = window.innerWidth;
   var contenedorGrid = document.getElementById("grid-items");
+  var contenedorQuestion = document.getElementById("contenedor-question")
   contenedorGrid.classList.toggle("oculto");
   if ( screenWidth < 880 ) {  
    
       if ( contenedorGrid.style.height === "0vh" ) {
-        contenedorGrid.style.height = "60vh"; // Ajusta la altura máxima según tus necesidades
+        contenedorGrid.style.height = "80vh"; // Ajusta la altura máxima según tus necesidades
         contenedorGrid.style.opacity = "1";
+        contenedorQuestion.style.overflow="scroll";
+     
       } else {
         // Ocultar el contenedor Grid
         contenedorGrid.style.height = "0vh";
         contenedorGrid.style.opacity = "0";
+        contenedorQuestion.style.overflow="hidden";
      }
   }
  
